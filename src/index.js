@@ -5,9 +5,11 @@ import App from './App';
 import Profile from './profile';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes} from "react-router-dom";
+//import PaginatedItems from 'react-paginate';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  <>
   <BrowserRouter>
   <Routes>
     <Route path='/' element={<App/>}/>
@@ -22,6 +24,9 @@ root.render(
     />
   </Routes>
 </BrowserRouter>
+{/* <PaginatedItems itemsPerPage={4} /> */}
+ 
+</>
 );
 
 // If you want to start measuring performance in your app, pass a function

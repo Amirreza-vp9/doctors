@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import './App.css';
 import { Link, useParams } from 'react-router-dom';
 
 const Profile = () => {
@@ -18,12 +19,15 @@ const Profile = () => {
                 <div className='info'>
                     {(info == null) ? <h1>Please wait . . .</h1> : info && info.doctor &&
                     <>
-                        <img className='img'
-                        src={`https://www.tebinja.com/img/uploads/doctors/thumbnails/${info.doctor.url}`}
-                        width="200" height="200"></img>
+                            <img 
+                                src={`https://www.tebinja.com/img/uploads/doctors/thumbnails/${info.doctor.url}`}
+                                onError={e => e.target.src = '/em-w-pro.jpg'}
+                                className='img' width="200" 
+                                height="200"
+                            />
                         <h3>About : {info.doctor.about}</h3>
                         <h3>Address : {info.doctor.address}</h3>
-                        <h3>University: {info.doctor.university.name}</h3>
+                        {/* <h3>University: {info.doctor.university.name}</h3> */}
                         <h3>Rate: {info.doctor.rate}</h3>
                     </>    
                     }
